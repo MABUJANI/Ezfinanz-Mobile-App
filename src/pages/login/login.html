@@ -1,0 +1,38 @@
+<ion-header >
+    <!-- <ion-navbar color='primary'>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Home</ion-title>
+    </ion-navbar> -->
+  </ion-header>
+  <ion-content padding>
+ <div align="center">
+<img src="../../assets/imgs/ezfinanz-logo1-1.png" style="margin-top: 20px;" > 
+</div>
+<!-- Input with placeholder -->
+<ion-label style="font-size: 25px;margin-top: 40px">Sign in</ion-label>
+<p style="font-size: 15px">Sign in to continue</p>
+
+<div class="mdc-text-field username">
+    <ion-input [(ngModel)]="userProvider.userName" type="tel" maxlength="10" class="mdc-text-field__input" id="username-input" name="username" required></ion-input>
+          
+          <label class="mdc-floating-label" for="username-input">Mobile Number*</label>
+          <div class="mdc-line-ripple"></div>
+      </div>
+      <div class="mdc-text-field password">
+          <input type="password" [(ngModel)]="userProvider.password" class="mdc-text-field__input" id="password-input" name="password" required>
+          <label class="mdc-floating-label" for="password-input">Password</label>
+          <div class="mdc-line-ripple"></div>
+        </div>
+<!-- <ion-input placeholder="Enter Mobile Number" [(ngModel)]="userProvider.userName" type="tel" maxlength="10"></ion-input>
+<ion-input  placeholder="Enter Password" [(ngModel)]="userProvider.password" type="password"></ion-input> -->
+
+<button ion-button style="color:#69BDE5;" full shape="round" (click)="SignIn()">Login</button>
+<h6 style="text-align: center">Don't have an account?  <span style="color: #69BDE5" (click)="signup()">Sign up</span></h6>
+
+    <p style="color:red;" class='errorElement' [hidden]='!wrongCredential' text-center>
+       The mobile number or password you entered is incorrect.<br>(or)<br>Check Your Internet Connection.
+    </p>
+ 
+</ion-content>

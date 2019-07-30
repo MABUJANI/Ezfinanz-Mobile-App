@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar color='primary'>
+        <ion-title>Account Verification</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <p style="font-size: 12px" text-center>Please Enter both mobile OTP and Email OTP to <br>Verify your account.</p>
+   
+    <div class="mdc-text-field username">
+            <ion-input type="tel" maxlength="6" [(ngModel)]="OTPCheck.mobileotp" class="mdc-text-field__input" id="username-input" name="username" required></ion-input>
+            <label class="mdc-floating-label" for="username-input">Mobile OTP</label>
+            <div class="mdc-line-ripple"></div>
+          </div>
+          <div class="mdc-text-field username">
+            <ion-input type="tel" maxlength="6" [(ngModel)]="OTPCheck.emailotp" class="mdc-text-field__input" id="username-input" name="username" required></ion-input>
+            <label class="mdc-floating-label" for="username-input">Email OTP</label>
+            <div class="mdc-line-ripple"></div>
+          </div>
+   
+   
+    <!-- <ion-input placeholder="Enter Mobile OTP" type="tel" maxlength="6" [(ngModel)]="OTPCheck.mobileotp"></ion-input> -->
+    <!-- <ion-input placeholder="Enter Email OTP" type="tel" maxlength="6"></ion-input> -->
+    <button ion-button style="color:#69BDE5;" full shape="round" (click)="verifyaccount()">Verify</button>
+    <p text-center>
+            <span float-left class="text-sky" (click)="resendotp()" style="font-size: 15px;color:#69BDE5;">Resend</span>
+            <!-- <span float-right>1:32 min left</span> -->
+        </p>
+        <br>
+        <p [hidden]="hide"> {{timeLeft}} Seconds Left....</p>
+</ion-content>
